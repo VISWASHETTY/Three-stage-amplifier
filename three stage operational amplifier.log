@@ -1,0 +1,502 @@
+
+                 *********************************************
+                 *                                           *
+                 *             A I M - S p i c e             *
+                 *                                           *
+                 *         Professional Version 2020.100           *
+                 *                                           *
+                 *********************************************
+
+	Date: Sat Jun 18 17:12:59 2022
+	Circuit File: D:\stvp\week-2\three stage operational amplifier.cir
+	Analysis: AC
+
+**************************  Circuit Description  **************************
+
+     1:  three stage operational amplifier
+     2:  
+     3:  Vdd 1 0 dc 1.8
+     4:  vin+ 5 0 dc 0.8 ac 1.0 sin(0.9 0.3 1kHz 0 0)
+     5:  vin- 4 0 dc 0.8 
+     6:  Vbias1 2 0 dc 0.8
+     7:  Vbias2 10 0 dc 0.8
+     8:  Cm1 7 11 15pf
+     9:  Cm2 9 11 20pf
+    10:  Cl 11 0 10pf
+    11:  m1 3 2 1 1 ptype l=180n w=8000n
+    12:  m2 6 4 3 1 ptype l=180n w=8000n
+    13:  m3 7 5 3 1 ptype l=180n w=8000n
+    14:  m4 6 6 0 0 ntype l=180n w=2070n
+    15:  m5 7 6 0 0 ntype l=180n w=2040n
+    16:  m6 8 7 0 0 ntype l=180n w=4800n
+    17:  m7 8 8 1 1 ptype l=180n w=4000n
+    18:  m8 9 8 1 1 ptype l=180n w=4000n
+    19:  m9 9 10 0 0 ntype l=180n w=4800n
+    20:  m10 11 9 1 1 ptype l=180n w=8000n
+    21:  m11 11 10 0 0 ntype l=180n w=4800n
+    22:  .plot ac vdb(11,5)
+    23:  
+    24:  .MODEL ntype NMOS (                                LEVEL   = 49
+    25:  +VERSION = 3.1            TNOM    = 27             TOX     = 4.1E-9
+    26:  +XJ      = 1E-7           NCH     = 2.3549E17      VTH0    = 0.3932664
+    27:  +K1      = 0.5826058      K2      = 6.016593E-3    K3      = 1E-3
+    28:  +K3B     = 1.4046112      W0      = 1E-7           NLX     = 1.755425E-7
+    29:  +DVT0W   = 0              DVT1W   = 0              DVT2W   = 0
+    30:  +DVT0    = 1.3156832      DVT1    = 0.397759       DVT2    = 0.0615187
+    31:  +U0      = 280.5758609    UA      = -1.208176E-9   UB      = 2.159494E-18
+    32:  +UC      = 5.340577E-11   VSAT    = 9.601364E4     A0      = 1.7852987
+    33:  +AGS     = 0.4008594      B0      = -3.73715E-9    B1      = -1E-7
+    34:  +KETA    = -1.136459E-3   A1      = 2.580625E-4    A2      = 0.9802522
+    35:  +RDSW    = 105.472458     PRWG    = 0.5            PRWB    = -0.2
+    36:  +WR      = 1              WINT    = 0              LINT    = 1.571909E-8
+    37:  +XL      = 0              XW      = -1E-8          DWG     = -7.918114E-9
+    38:  +DWB     = -3.223301E-9   VOFF    = -0.0956759     NFACTOR = 2.4447616
+    39:  +CIT     = 0              CDSC    = 2.4E-4         CDSCD   = 0
+    40:  +CDSCB   = 0              ETA0    = 2.489084E-3    ETAB    = -2.143433E-5
+    41:  +DSUB    = 0.0140178      PCLM    = 0.7533987      PDIBLC1 = 0.1966545
+    42:  +PDIBLC2 = 3.366782E-3    PDIBLCB = -0.1           DROUT   = 0.7760158
+    43:  +PSCBE1  = 8E10           PSCBE2  = 9.204421E-10   PVAG    = 5.676338E-3
+    44:  +DELTA   = 0.01           RSH     = 6.5            MOBMOD  = 1
+    45:  +PRT     = 0              UTE     = -1.5           KT1     = -0.11
+    46:  +KT1L    = 0              KT2     = 0.022          UA1     = 4.31E-9
+    47:  +UB1     = -7.61E-18      UC1     = -5.6E-11       AT      = 3.3E4
+    48:  +WL      = 0              WLN     = 1              WW      = 0
+    49:  +WWN     = 1              WWL     = 0              LL      = 0
+    50:  +LLN     = 1              LW      = 0              LWN     = 1
+    51:  +LWL     = 0              CAPMOD  = 2              XPART   = 0.5
+    52:  +CGDO    = 7.83E-10       CGSO    = 7.83E-10       CGBO    = 1E-12
+    53:  +CJ      = 9.969364E-4    PB      = 0.8            MJ      = 0.376826
+    54:  +CJSW    = 2.618614E-10   PBSW    = 0.8321894      MJSW    = 0.1020453
+    55:  +CJSWG   = 3.3E-10        PBSWG   = 0.8321894      MJSWG   = 0.1020453
+    56:  +CF      = 0              PVTH0   = -1.428269E-3   PRDSW   = -4.3383092
+    57:  +PK2     = 8.440537E-5    WKETA   = 2.341504E-3    LKETA   = -9.397952E-3
+    58:  +PU0     = 15.2496815     PUA     = 5.74703E-11    PUB     = 1.593698E-23
+    59:  +PVSAT   = 857.5761302    PETA0   = 1.003159E-4    PKETA   = -1.378026E-3    )
+    60:  *
+    61:  .MODEL ptype PMOS (                                LEVEL   = 49
+    62:  +VERSION = 3.1            TNOM    = 27             TOX     = 4.1E-9
+    63:  +XJ      = 1E-7           NCH     = 4.1589E17      VTH0    = -0.4045149
+    64:  +K1      = 0.5513831      K2      = 0.0395421      K3      = 0
+    65:  +K3B     = 5.7116064      W0      = 1.003172E-6    NLX     = 1.239563E-7
+    66:  +DVT0W   = 0              DVT1W   = 0              DVT2W   = 0
+    67:  +DVT0    = 0.6078076      DVT1    = 0.2442982      DVT2    = 0.1
+    68:  +U0      = 116.1690772    UA      = 1.536496E-9    UB      = 1.17056E-21
+    69:  +UC      = -9.96841E-11   VSAT    = 1.324749E5     A0      = 1.9705728
+    70:  +AGS     = 0.4302931      B0      = 2.927795E-7    B1      = 6.182094E-7
+    71:  +KETA    = 2.115388E-3    A1      = 0.6455562      A2      = 0.3778114
+    72:  +RDSW    = 168.4877597    PRWG    = 0.5            PRWB    = -0.4990495
+    73:  +WR      = 1              WINT    = 0              LINT    = 3.029442E-8
+    74:  +XL      = 0              XW      = -1E-8          DWG     = -3.144339E-8
+    75:  +DWB     = -1.323608E-8   VOFF    = -0.1008469     NFACTOR = 1.9293877
+    76:  +CIT     = 0              CDSC    = 2.4E-4         CDSCD   = 0
+    77:  +CDSCB   = 0              ETA0    = 0.0719385      ETAB    = -0.0594662
+    78:  +DSUB    = 0.7367007      PCLM    = 1.0462908      PDIBLC1 = 2.709018E-4
+    79:  +PDIBLC2 = 0.0326163      PDIBLCB = -1E-3          DROUT   = 9.231736E-4
+    80:  +PSCBE1  = 1.060432E10    PSCBE2  = 3.062774E-9    PVAG    = 15.0473867
+    81:  +DELTA   = 0.01           RSH     = 7.6            MOBMOD  = 1
+    82:  +PRT     = 0              UTE     = -1.5           KT1     = -0.11
+    83:  +KT1L    = 0              KT2     = 0.022          UA1     = 4.31E-9
+    84:  +UB1     = -7.61E-18      UC1     = -5.6E-11       AT      = 3.3E4
+    85:  +WL      = 0              WLN     = 1              WW      = 0
+    86:  +WWN     = 1              WWL     = 0              LL      = 0
+    87:  +LLN     = 1              LW      = 0              LWN     = 1
+    88:  +LWL     = 0              CAPMOD  = 2              XPART   = 0.5
+    89:  +CGDO    = 6.54E-10       CGSO    = 6.54E-10       CGBO    = 1E-12
+    90:  +CJ      = 1.154124E-3    PB      = 0.8414529      MJ      = 0.406705
+    91:  +CJSW    = 2.50766E-10    PBSW    = 0.8            MJSW    = 0.3350647
+    92:  +CJSWG   = 4.22E-10       PBSWG   = 0.8            MJSWG   = 0.3350647
+    93:  +CF      = 0              PVTH0   = 2.252845E-3    PRDSW   = 7.5306858
+    94:  +PK2     = 1.57704E-3     WKETA   = 0.0355518      LKETA   = 7.806536E-3
+    95:  +PU0     = -1.6701992     PUA     = -5.63495E-11   PUB     = 1E-21
+    96:  +PVSAT   = 49.8423856     PETA0   = 9.968409E-5    PKETA   = -3.957099E-3    )
+    97:  .ac dec 20 1 1G
+
+***************************  Model Parameters  ****************************
+
+
+***************  Device Parameters (Only for .op analysis)  ***************
+
+Device m11:
+	Vgs     (gate-source voltage)        [V] : 0.798263
+	Vgd     (gate-drain voltage)         [V] : 0.452831
+	Vds     (drain-source voltage)       [V] : 0.345432
+	Vbs     (bulk-source voltage)        [V] : -0.0017369
+	Vbd     (bulk-drain voltage)         [V] : -0.347169
+	Id      (drain current)              [A] : 0.000267193
+	Is      (source current)             [A] : -0.000267193
+	Ibd     (bulk-drain current)         [A] : -3.47169e-13
+	Ibs     (bulk-source current)        [A] : -1.7369e-15
+	Vt      (threshold voltage)          [V] : 0.518313
+	Vgt     (gate overdrive voltage)     [V] : 0.279951
+	Vgsteff (effective vgt)              [V] : 0.273276
+	Gm      (transconductance)           [S] : 0.00157794
+	Gmb     (bulk bias transconductance) [S] : 0.000387026
+	Ueff    (mobility)             [cm^2/Vs] : 351.057
+	Gds     (channel conductance)        [S] : 0.000111916
+	Rds     (output resistance)        [Ohm] : 8935.3
+	Vdsat   (drain saturation voltage)   [V] : 0.197531
+	IC      (inversion coefficient)       [] : 17.4059
+	Cgs     (gate-source capacitance)    [F] : 8.50891e-15
+	Csg     (source-gate capacitance)    [F] : 3.7584e-15
+	Cgd     (gate-drain capacitance)     [F] : 3.74181e-15
+	Cdg     (drain-gate capacitance)     [F] : 5.78076e-15
+	Cds     (drain-source capacitance)   [F] : 2.57213e-15
+	Cgg     (gate-gate capacitance)      [F] : 5.16501e-15
+	Cdd     (drain-drain capacitance)    [F] : 5.16501e-15
+	Cgb     (gate-bulk capacitance)      [F] : 1.1203e-15
+	Cbs     (bulk-source capacitance)    [F] : 1.58366e-15
+	Cbd     (bulk-drain capacitance)     [F] : 1.52863e-15
+
+Device m9:
+	Vgs     (gate-source voltage)        [V] : 0.797989
+	Vgd     (gate-drain voltage)         [V] : -0.135883
+	Vds     (drain-source voltage)       [V] : 0.933872
+	Vbs     (bulk-source voltage)        [V] : -0.00201101
+	Vbd     (bulk-drain voltage)         [V] : -0.935883
+	Id      (drain current)              [A] : 0.000309387
+	Is      (source current)             [A] : -0.000309387
+	Ibd     (bulk-drain current)         [A] : -9.45883e-13
+	Ibs     (bulk-source current)        [A] : -2.75908e-15
+	Vt      (threshold voltage)          [V] : 0.514014
+	Vgt     (gate overdrive voltage)     [V] : 0.283975
+	Vgsteff (effective vgt)              [V] : 0.277526
+	Gm      (transconductance)           [S] : 0.0017582
+	Gmb     (bulk bias transconductance) [S] : 0.00042674
+	Ueff    (mobility)             [cm^2/Vs] : 351.167
+	Gds     (channel conductance)        [S] : 6.18474e-05
+	Rds     (output resistance)        [Ohm] : 16168.8
+	Vdsat   (drain saturation voltage)   [V] : 0.199539
+	IC      (inversion coefficient)       [] : 20.1492
+	Cgs     (gate-source capacitance)    [F] : 8.50883e-15
+	Csg     (source-gate capacitance)    [F] : 3.7584e-15
+	Cgd     (gate-drain capacitance)     [F] : 3.72121e-15
+	Cdg     (drain-gate capacitance)     [F] : 5.76077e-15
+	Cds     (drain-source capacitance)   [F] : 2.57035e-15
+	Cgg     (gate-gate capacitance)      [F] : 5.14739e-15
+	Cdd     (drain-drain capacitance)    [F] : 5.14739e-15
+	Cgb     (gate-bulk capacitance)      [F] : 1.14266e-15
+	Cbs     (bulk-source capacitance)    [F] : 0
+	Cbd     (bulk-drain capacitance)     [F] : 0
+
+Device m6:
+	Vgs     (gate-source voltage)        [V] : 0.813332
+	Vgd     (gate-drain voltage)         [V] : 0.149459
+	Vds     (drain-source voltage)       [V] : 0.663872
+	Vbs     (bulk-source voltage)        [V] : -0.00207043
+	Vbd     (bulk-drain voltage)         [V] : -0.665943
+	Id      (drain current)              [A] : 0.000318532
+	Is      (source current)             [A] : -0.000318532
+	Ibd     (bulk-drain current)         [A] : -6.75943e-13
+	Ibs     (bulk-source current)        [A] : -2.83972e-15
+	Vt      (threshold voltage)          [V] : 0.516038
+	Vgt     (gate overdrive voltage)     [V] : 0.297294
+	Vgsteff (effective vgt)              [V] : 0.291549
+	Gm      (transconductance)           [S] : 0.00173887
+	Gmb     (bulk bias transconductance) [S] : 0.0004235
+	Ueff    (mobility)             [cm^2/Vs] : 350.705
+	Gds     (channel conductance)        [S] : 7.05447e-05
+	Rds     (output resistance)        [Ohm] : 14175.4
+	Vdsat   (drain saturation voltage)   [V] : 0.206174
+	IC      (inversion coefficient)       [] : 20.7723
+	Cgs     (gate-source capacitance)    [F] : 8.51284e-15
+	Csg     (source-gate capacitance)    [F] : 3.7584e-15
+	Cgd     (gate-drain capacitance)     [F] : 3.72281e-15
+	Cdg     (drain-gate capacitance)     [F] : 5.76322e-15
+	Cds     (drain-source capacitance)   [F] : 2.57162e-15
+	Cgg     (gate-gate capacitance)      [F] : 5.14937e-15
+	Cdd     (drain-drain capacitance)    [F] : 5.14937e-15
+	Cgb     (gate-bulk capacitance)      [F] : 1.13974e-15
+	Cbs     (bulk-source capacitance)    [F] : 0
+	Cbd     (bulk-drain capacitance)     [F] : 0
+
+Device m5:
+	Vgs     (gate-source voltage)        [V] : 0.787876
+	Vgd     (gate-drain voltage)         [V] : -0.0258446
+	Vds     (drain-source voltage)       [V] : 0.813721
+	Vbs     (bulk-source voltage)        [V] : -0.000840563
+	Vbd     (bulk-drain voltage)         [V] : -0.814562
+	Id      (drain current)              [A] : 0.00012934
+	Is      (source current)             [A] : -0.00012934
+	Ibd     (bulk-drain current)         [A] : -8.14562e-13
+	Ibs     (bulk-source current)        [A] : -8.40563e-16
+	Vt      (threshold voltage)          [V] : 0.511436
+	Vgt     (gate overdrive voltage)     [V] : 0.27644
+	Vgsteff (effective vgt)              [V] : 0.269559
+	Gm      (transconductance)           [S] : 0.000759994
+	Gmb     (bulk bias transconductance) [S] : 0.000185226
+	Ueff    (mobility)             [cm^2/Vs] : 370.333
+	Gds     (channel conductance)        [S] : 2.79446e-05
+	Rds     (output resistance)        [Ohm] : 35785.1
+	Vdsat   (drain saturation voltage)   [V] : 0.194016
+	IC      (inversion coefficient)       [] : 18.7902
+	Cgs     (gate-source capacitance)    [F] : 3.61423e-15
+	Csg     (source-gate capacitance)    [F] : 1.59732e-15
+	Cgd     (gate-drain capacitance)     [F] : 1.5805e-15
+	Cdg     (drain-gate capacitance)     [F] : 2.44846e-15
+	Cds     (drain-source capacitance)   [F] : 1.09203e-15
+	Cgg     (gate-gate capacitance)      [F] : 2.18781e-15
+	Cdd     (drain-drain capacitance)    [F] : 2.18781e-15
+	Cgb     (gate-bulk capacitance)      [F] : 4.85519e-16
+	Cbs     (bulk-source capacitance)    [F] : 6.73131e-16
+	Cbd     (bulk-drain capacitance)     [F] : 6.2791e-16
+
+Device m4:
+	Vgs     (gate-source voltage)        [V] : 0.78787
+	Vgd     (gate-drain voltage)         [V] : 0.000846571
+	Vds     (drain-source voltage)       [V] : 0.787024
+	Vbs     (bulk-source voltage)        [V] : -0.000846571
+	Vbd     (bulk-drain voltage)         [V] : -0.78787
+	Id      (drain current)              [A] : 0.000130269
+	Is      (source current)             [A] : -0.000130269
+	Ibd     (bulk-drain current)         [A] : -7.8787e-13
+	Ibs     (bulk-source current)        [A] : -8.46571e-16
+	Vt      (threshold voltage)          [V] : 0.51173
+	Vgt     (gate overdrive voltage)     [V] : 0.276141
+	Vgsteff (effective vgt)              [V] : 0.269242
+	Gm      (transconductance)           [S] : 0.0007678
+	Gmb     (bulk bias transconductance) [S] : 0.000187194
+	Ueff    (mobility)             [cm^2/Vs] : 369.867
+	Gds     (channel conductance)        [S] : 2.84882e-05
+	Rds     (output resistance)        [Ohm] : 35102.3
+	Vdsat   (drain saturation voltage)   [V] : 0.193908
+	IC      (inversion coefficient)       [] : 18.6746
+	Cgs     (gate-source capacitance)    [F] : 3.66741e-15
+	Csg     (source-gate capacitance)    [F] : 1.62081e-15
+	Cgd     (gate-drain capacitance)     [F] : 1.60382e-15
+	Cdg     (drain-gate capacitance)     [F] : 2.48454e-15
+	Cds     (drain-source capacitance)   [F] : 1.10813e-15
+	Cgg     (gate-gate capacitance)      [F] : 2.22004e-15
+	Cdd     (drain-drain capacitance)    [F] : 2.22004e-15
+	Cgb     (gate-bulk capacitance)      [F] : 4.92578e-16
+	Cbs     (bulk-source capacitance)    [F] : 6.83029e-16
+	Cbd     (bulk-drain capacitance)     [F] : 6.38207e-16
+
+Device m10:
+	Vgs     (gate-source voltage)        [V] : -0.860075
+	Vgd     (gate-drain voltage)         [V] : 0.586957
+	Vds     (drain-source voltage)       [V] : -1.44703
+	Vbs     (bulk-source voltage)        [V] : 0.00203084
+	Vbd     (bulk-drain voltage)         [V] : 1.44906
+	Id      (drain current)              [A] : -0.000267216
+	Is      (source current)             [A] : 0.000267216
+	Ibd     (bulk-drain current)         [A] : -1.44906e-12
+	Ibs     (bulk-source current)        [A] : -2.03084e-15
+	Vt      (threshold voltage)          [V] : -0.496649
+	Vgt     (gate overdrive voltage)     [V] : -0.363426
+	Vgsteff (effective vgt)              [V] : -0.361172
+	Gm      (transconductance)           [S] : 0.00120114
+	Gmb     (bulk bias transconductance) [S] : 0.000367108
+	Ueff    (mobility)             [cm^2/Vs] : 76.8741
+	Gds     (channel conductance)        [S] : 3.9147e-05
+	Rds     (output resistance)        [Ohm] : 25544.7
+	Vdsat   (drain saturation voltage)   [V] : -0.288926
+	IC      (inversion coefficient)       [] : 46.7327
+	Cgs     (gate-source capacitance)    [F] : 1.20146e-14
+	Csg     (source-gate capacitance)    [F] : 5.232e-15
+	Cgd     (gate-drain capacitance)     [F] : 5.1127e-15
+	Cdg     (drain-gate capacitance)     [F] : 7.91444e-15
+	Cds     (drain-source capacitance)   [F] : 3.51725e-15
+	Cgg     (gate-gate capacitance)      [F] : 6.9687e-15
+	Cdd     (drain-drain capacitance)    [F] : 6.9687e-15
+	Cgb     (gate-bulk capacitance)      [F] : 1.60382e-15
+	Cbs     (bulk-source capacitance)    [F] : 3.37313e-15
+	Cbd     (bulk-drain capacitance)     [F] : 2.38775e-15
+
+Device m8:
+	Vgs     (gate-source voltage)        [V] : -1.12982
+	Vgd     (gate-drain voltage)         [V] : -0.272416
+	Vds     (drain-source voltage)       [V] : -0.857403
+	Vbs     (bulk-source voltage)        [V] : 0.00235134
+	Vbd     (bulk-drain voltage)         [V] : 0.859754
+	Id      (drain current)              [A] : -0.000309387
+	Is      (source current)             [A] : 0.000309387
+	Ibd     (bulk-drain current)         [A] : -8.59754e-13
+	Ibs     (bulk-source current)        [A] : -2.35134e-15
+	Vt      (threshold voltage)          [V] : -0.504583
+	Vgt     (gate overdrive voltage)     [V] : -0.625236
+	Vgsteff (effective vgt)              [V] : -0.625091
+	Gm      (transconductance)           [S] : 0.000797232
+	Gmb     (bulk bias transconductance) [S] : 0.000259218
+	Ueff    (mobility)             [cm^2/Vs] : 71.9476
+	Gds     (channel conductance)        [S] : 3.93754e-05
+	Rds     (output resistance)        [Ohm] : 25396.6
+	Vdsat   (drain saturation voltage)   [V] : -0.464281
+	IC      (inversion coefficient)       [] : 115.632
+	Cgs     (gate-source capacitance)    [F] : 6.05327e-15
+	Csg     (source-gate capacitance)    [F] : 2.616e-15
+	Cgd     (gate-drain capacitance)     [F] : 2.55811e-15
+	Cdg     (drain-gate capacitance)     [F] : 3.95929e-15
+	Cds     (drain-source capacitance)   [F] : 1.76992e-15
+	Cgg     (gate-gate capacitance)      [F] : 3.48568e-15
+	Cdd     (drain-drain capacitance)    [F] : 3.48568e-15
+	Cgb     (gate-bulk capacitance)      [F] : 7.99106e-16
+	Cbs     (bulk-source capacitance)    [F] : 1.68634e-15
+	Cbd     (bulk-drain capacitance)     [F] : 1.32182e-15
+
+Device m7:
+	Vgs     (gate-source voltage)        [V] : -1.12957
+	Vgd     (gate-drain voltage)         [V] : -0.00242081
+	Vds     (drain-source voltage)       [V] : -1.12715
+	Vbs     (bulk-source voltage)        [V] : 0.00242081
+	Vbd     (bulk-drain voltage)         [V] : 1.12957
+	Id      (drain current)              [A] : -0.000318528
+	Is      (source current)             [A] : 0.000318528
+	Ibd     (bulk-drain current)         [A] : -1.13957e-12
+	Ibs     (bulk-source current)        [A] : -3.31431e-15
+	Vt      (threshold voltage)          [V] : -0.499921
+	Vgt     (gate overdrive voltage)     [V] : -0.629644
+	Vgsteff (effective vgt)              [V] : -0.629506
+	Gm      (transconductance)           [S] : 0.000813701
+	Gmb     (bulk bias transconductance) [S] : 0.000260232
+	Ueff    (mobility)             [cm^2/Vs] : 72.0257
+	Gds     (channel conductance)        [S] : 3.1542e-05
+	Rds     (output resistance)        [Ohm] : 31703.7
+	Vdsat   (drain saturation voltage)   [V] : -0.467144
+	IC      (inversion coefficient)       [] : 118.921
+	Cgs     (gate-source capacitance)    [F] : 6.04017e-15
+	Csg     (source-gate capacitance)    [F] : 2.616e-15
+	Cgd     (gate-drain capacitance)     [F] : 2.55678e-15
+	Cdg     (drain-gate capacitance)     [F] : 3.95797e-15
+	Cds     (drain-source capacitance)   [F] : 1.76468e-15
+	Cgg     (gate-gate capacitance)      [F] : 3.48461e-15
+	Cdd     (drain-drain capacitance)    [F] : 3.48461e-15
+	Cgb     (gate-bulk capacitance)      [F] : 8.00656e-16
+	Cbs     (bulk-source capacitance)    [F] : 0
+	Cbd     (bulk-drain capacitance)     [F] : 0
+
+Device m3:
+	Vgs     (gate-source voltage)        [V] : -0.808998
+	Vgd     (gate-drain voltage)         [V] : -0.0163849
+	Vds     (drain-source voltage)       [V] : -0.792614
+	Vbs     (bulk-source voltage)        [V] : 0.191002
+	Vbd     (bulk-drain voltage)         [V] : 0.983615
+	Id      (drain current)              [A] : -0.000129334
+	Is      (source current)             [A] : 0.000129334
+	Ibd     (bulk-drain current)         [A] : -9.93615e-13
+	Ibs     (bulk-source current)        [A] : -2.00995e-13
+	Vt      (threshold voltage)          [V] : -0.563125
+	Vgt     (gate overdrive voltage)     [V] : -0.245874
+	Vgsteff (effective vgt)              [V] : -0.241146
+	Gm      (transconductance)           [S] : 0.000893295
+	Gmb     (bulk bias transconductance) [S] : 0.000260515
+	Ueff    (mobility)             [cm^2/Vs] : 76.3129
+	Gds     (channel conductance)        [S] : 3.49447e-05
+	Rds     (output resistance)        [Ohm] : 28616.6
+	Vdsat   (drain saturation voltage)   [V] : -0.211204
+	IC      (inversion coefficient)       [] : 23.4243
+	Cgs     (gate-source capacitance)    [F] : 1.21114e-14
+	Csg     (source-gate capacitance)    [F] : 5.232e-15
+	Cgd     (gate-drain capacitance)     [F] : 5.09537e-15
+	Cdg     (drain-gate capacitance)     [F] : 7.91281e-15
+	Cds     (drain-source capacitance)   [F] : 3.48704e-15
+	Cgg     (gate-gate capacitance)      [F] : 6.94611e-15
+	Cdd     (drain-drain capacitance)    [F] : 6.94611e-15
+	Cgb     (gate-bulk capacitance)      [F] : 1.58449e-15
+	Cbs     (bulk-source capacitance)    [F] : 0
+	Cbd     (bulk-drain capacitance)     [F] : 0
+
+Device m2:
+	Vgs     (gate-source voltage)        [V] : -0.808991
+	Vgd     (gate-drain voltage)         [V] : 0.0102932
+	Vds     (drain-source voltage)       [V] : -0.819285
+	Vbs     (bulk-source voltage)        [V] : 0.191009
+	Vbd     (bulk-drain voltage)         [V] : 1.01029
+	Id      (drain current)              [A] : -0.000130255
+	Is      (source current)             [A] : 0.000130255
+	Ibd     (bulk-drain current)         [A] : -1.02029e-12
+	Ibs     (bulk-source current)        [A] : -2.01002e-13
+	Vt      (threshold voltage)          [V] : -0.562592
+	Vgt     (gate overdrive voltage)     [V] : -0.246399
+	Vgsteff (effective vgt)              [V] : -0.241688
+	Gm      (transconductance)           [S] : 0.000896533
+	Gmb     (bulk bias transconductance) [S] : 0.000261125
+	Ueff    (mobility)             [cm^2/Vs] : 76.3226
+	Gds     (channel conductance)        [S] : 3.47403e-05
+	Rds     (output resistance)        [Ohm] : 28785
+	Vdsat   (drain saturation voltage)   [V] : -0.21157
+	IC      (inversion coefficient)       [] : 23.5881
+	Cgs     (gate-source capacitance)    [F] : 1.21088e-14
+	Csg     (source-gate capacitance)    [F] : 5.232e-15
+	Cgd     (gate-drain capacitance)     [F] : 5.09525e-15
+	Cdg     (drain-gate capacitance)     [F] : 7.91266e-15
+	Cds     (drain-source capacitance)   [F] : 3.48597e-15
+	Cgg     (gate-gate capacitance)      [F] : 6.94604e-15
+	Cdd     (drain-drain capacitance)    [F] : 6.94604e-15
+	Cgb     (gate-bulk capacitance)      [F] : 1.58472e-15
+	Cbs     (bulk-source capacitance)    [F] : 0
+	Cbd     (bulk-drain capacitance)     [F] : 0
+
+Device m1:
+	Vgs     (gate-source voltage)        [V] : -0.998027
+	Vgd     (gate-drain voltage)         [V] : -0.811954
+	Vds     (drain-source voltage)       [V] : -0.186073
+	Vbs     (bulk-source voltage)        [V] : 0.00197265
+	Vbd     (bulk-drain voltage)         [V] : 0.188046
+	Id      (drain current)              [A] : -0.000259544
+	Is      (source current)             [A] : 0.000259544
+	Ibd     (bulk-drain current)         [A] : -1.98039e-13
+	Ibs     (bulk-source current)        [A] : -2.70699e-15
+	Vt      (threshold voltage)          [V] : -0.518482
+	Vgt     (gate overdrive voltage)     [V] : -0.479545
+	Vgsteff (effective vgt)              [V] : -0.478838
+	Gm      (transconductance)           [S] : 0.000618442
+	Gmb     (bulk bias transconductance) [S] : 0.000224009
+	Ueff    (mobility)             [cm^2/Vs] : 73.981
+	Gds     (channel conductance)        [S] : 0.000965605
+	Rds     (output resistance)        [Ohm] : 1035.62
+	Vdsat   (drain saturation voltage)   [V] : -0.368289
+	IC      (inversion coefficient)       [] : 47.1655
+	Cgs     (gate-source capacitance)    [F] : 1.17019e-14
+	Csg     (source-gate capacitance)    [F] : 5.232e-15
+	Cgd     (gate-drain capacitance)     [F] : 6.13552e-15
+	Cdg     (drain-gate capacitance)     [F] : 8.46007e-15
+	Cds     (drain-source capacitance)   [F] : 3.03361e-15
+	Cgg     (gate-gate capacitance)      [F] : 7.41661e-15
+	Cdd     (drain-drain capacitance)    [F] : 7.41661e-15
+	Cgb     (gate-bulk capacitance)      [F] : 9.60473e-16
+	Cbs     (bulk-source capacitance)    [F] : 0
+	Cbd     (bulk-drain capacitance)     [F] : 0
+
+
+
+**************************  Analysis Parameters  **************************
+
+	Sweeptype .......... : Decade
+	Points per decade .. : 20
+	Start frequency .... : 1
+	End frequency ...... : 1G
+
+
+
+**************  Options (Only those different from default)  **************
+
+
+
+*************************  Simulation Statistics  *************************
+
+	Total number of iterations...........: 13
+	Total analysis time (sec)............: 0.033
+	Time spent in device loading (sec)...: 0.003
+	Time spent in L-U decomposition (sec): 0
+	Time spent in matrix reordering (sec): 0
+	Time spent in matrix solving (sec)...: 0
+
+***************************  Kernel Messages  *****************************
+
+Circuit: three stage operational amplifier
+
+Warning: parameter xl not supported; value ignored
+Warning: parameter xw not supported; value ignored
+Warning: parameter xl not supported; value ignored
+Warning: parameter xw not supported; value ignored
+Warning: Pd = 0 is less than W for m11 in model ntype.
+Warning: Ps = 0 is less than W for m11 in model ntype.
+Warning: Pd = 0 is less than W for m5 in model ntype.
+Warning: Ps = 0 is less than W for m5 in model ntype.
+Warning: Pd = 0 is less than W for m4 in model ntype.
+Warning: Ps = 0 is less than W for m4 in model ntype.
+Warning: Pd = 0 is less than W for m10 in model ptype.
+Warning: Ps = 0 is less than W for m10 in model ptype.
+Warning: Pd = 0 is less than W for m8 in model ptype.
+Warning: Ps = 0 is less than W for m8 in model ptype.
+
